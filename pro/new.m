@@ -94,9 +94,9 @@ res(N,6) = jiaEx;
 res(N,7) = jiaEy;
  
 end
-res(40,:)=[];
-% [idxbest, Cbest, sumDbest, Dbest]=kmeans(res,5);
-% res(:,8) = idxbest;
+res(28,:)=[];
+ [idxbest, Cbest, sumDbest, Dbest]=kmeans(res,5);
+ res(:,8) = idxbest;
 toc;
  %% º∆À„““
 %  [yimuMaxVal, yimuMaxSeq] = max(yimu);

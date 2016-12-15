@@ -15,5 +15,10 @@ data = [
 4.03	6.06	-0.76	-0.32	0.21
 2.97	10.15	0.32	-0.74	0.06    
 ];
-[idxbest, Cbest, sumDbest, Dbest]=kmeans(data,5) 
-
+[idxbest, Cbest, sumDbest, Dbest]=kmeans(data,3) ;
+y = [1 1 1 1 1 1 1 0 0 0 0 0 0 0];
+f=@(k,x)k(1)*abs(x(:,1))/12+k(2)*abs(x(:,2))/42+k(3)*abs(x(:,3))/6+k(4)*abs(x(:,4))/1+k(5)*abs(x(:,5))/3;
+x = data;
+%k = lsqcurvefit(f,[0.2 0.2 0.2 0.2 0.2],x,idxbest(:));
+%k = lsqnonlin(f,[0.2 0.2 0.2 0.2 0.2],x,idxbest(:));
+k = lsqcurvefit(f,[0.2 0.2 0.2 0.2 0.2],x,y(:));
